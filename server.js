@@ -1,21 +1,21 @@
-var prerender = require('prerender')
+#!/usr/bin/env node
+var prerender = require('./lib');
 
 var server = prerender({
     workers: process.env.PHANTOM_CLUSTER_NUM_WORKERS,
-    phantomArguments: [
-    	"--load-images=false",
-    	"--ignore-ssl-errors=true",
-        "--ssl-protocol=tlsv1",
-    	"--disk-cache=true",
-    	"--max-disk-cache-size=1048576"
-    ],
-    followRedirect: true,
-    waitAfterLastRequest: 2000,
-    jsTimeout: 20000
+    iterations: process.env.PHANTOM_WORKER_ITERATIONS || 10,
+    phantomBasePort: process.env.PHANTOM_CLUSTER_BASE_PORT || 12300,
+    messageTimeout: process.env.PHANTOM_CLUSTER_MESSAGE_TIMEOUT
 });
 
-server.use(prerender.basicAuth());
-server.use(require('./lib/plugins/override-default-user-agent'));
+
+// server.use(prerender.basicAuth());
+// server.use(prerender.whitelist());
+server.use(prerender.blacklist());
+// server.use(prerender.logger());
 server.use(prerender.removeScriptTags());
+server.use(prerender.httpHeaders());
+// server.use(prerender.inMemoryHtmlCache());
+// server.use(prerender.s3HtmlCache());
 
 server.start();
