@@ -1,11 +1,11 @@
 {
-  "author": "Prerender.io",
+  "author": "TrackIf",
   "name": "prerender",
-  "description": "Service to prerender Javascript rendered pages for SEO",
+  "description": "A customized version of Prerender.io",
   "version": "3.15.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/prerender/prerender"
+    "url": "https://github.com/TrackIf/prerender"
   },
   "dependencies": {
     "aws-sdk": "^2.1.8",
