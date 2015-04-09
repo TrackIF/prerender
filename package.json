@@ -17,5 +17,8 @@
   },
   "bin": {
     "prerender": "server.js"
+  },
+  "scripts": {
+    "start": "node server.js &> log/prerender.log"
   }
 }
