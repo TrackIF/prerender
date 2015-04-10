@@ -27,5 +27,6 @@ server.use(prerender.httpHeaders());
 server.use(prerender.overrideDefaultUserAgent());
 // server.use(prerender.inMemoryHtmlCache());
 // server.use(prerender.s3HtmlCache());
+server.use(prerender.handle500s());
 
 server.start();
