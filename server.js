@@ -16,11 +16,11 @@ var server = prerender({
 });
 
 
-// server.use(prerender.basicAuth());
-// server.use(prerender.whitelist());
-// server.use(prerender.blacklist());
 server.use(prerender.healthcheck());
 server.use(prerender.loaderio());
+// server.use(prerender.whitelist());
+// server.use(prerender.blacklist());
+server.use(prerender.basicAuth());
 server.use(prerender.logger());
 server.use(prerender.removeScriptTags());
 server.use(prerender.httpHeaders());
