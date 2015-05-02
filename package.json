@@ -1,8 +1,8 @@
 {
   "author": "TrackIf",
   "name": "prerender",
-  "description": "A customized version of Prerender.io",
-  "version": "3.15.0",
+  "description": "Service to prerender Javascript rendered pages for SEO",
+  "version": "3.16.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/TrackIf/prerender"
