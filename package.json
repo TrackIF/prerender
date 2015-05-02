@@ -21,6 +21,7 @@
     "prerender": "server.js"
   },
   "scripts": {
-    "start": "node server.js &> log/prerender.log"
+    "start": "node-supervisor server.js &> log/prerender.log",
+    "dev": "node-supervisor server.js"
   }
 }
